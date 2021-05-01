@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="kmobile.app.mobile_store">
    <application
-        android:label="mobile_store"
+        android:label="Mobile Store"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
