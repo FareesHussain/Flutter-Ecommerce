@@ -4,11 +4,13 @@ class CustomTextField extends StatelessWidget {
   final String hintText;
   final String labelText;
   final IconData iconData;
+  final TextEditingController controller;
   const CustomTextField(
       {Key? key,
         required this.hintText,
         required this.labelText,
-        required this.iconData
+        required this.iconData,
+        required this.controller
       })
       : super(key: key);
   @override
@@ -17,6 +19,7 @@ class CustomTextField extends StatelessWidget {
       Padding(
         padding: const EdgeInsets.all(8.0),
         child: TextFormField(
+          controller: controller,
           textInputAction: TextInputAction.next,
           textCapitalization: TextCapitalization.words,
           decoration: InputDecoration(
@@ -34,10 +37,12 @@ class CustomTextField extends StatelessWidget {
 class CustomPasswordField extends StatefulWidget {
   final String hintText;
   final String labelText;
+  final TextEditingController controller;
   CustomPasswordField(
       {Key? key,
         required this.hintText,
         required this.labelText,
+        required this.controller,
       })
       : super(key: key);
 
@@ -62,6 +67,7 @@ class _PasswordState extends State<CustomPasswordField> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: TextFormField(
+        controller: widget.controller,
         obscureText: ObscureText(),
         textInputAction: TextInputAction.next,
         textCapitalization: TextCapitalization.words,
