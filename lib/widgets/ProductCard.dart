@@ -19,53 +19,61 @@ class ProductCard extends StatelessWidget {
         ],
       ),
       margin: EdgeInsets.symmetric(vertical: !product.isSelected ? 20 : 0),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        child: Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                SizedBox(height: product.isSelected ? 15 : 0),
-                Expanded(
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: <Widget>[
-                      CircleAvatar(
-                        radius: 60,
-                        backgroundColor: LightColor.orange.withAlpha(40),
-                      ),
-                      Image.network(
+      child: SizedBox(
+        height: 200,
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: Stack(
+            alignment: Alignment.center,
+            children: <Widget>[
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  SizedBox(height: product.isSelected ? 15 : 0, width: 200,),
+                  Expanded(
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: <Widget>[
+                        CircleAvatar(
+                          radius: 60,
+                          backgroundColor: LightColor.orange.withAlpha(40),
+                        ),
+                        // CachedNetworkImage(
+                        //   imageUrl: product.image,
+                        //   placeholder: (context, url) => new CircularProgressIndicator(),
+                        //   errorWidget: (context, url, error) => new Icon(Icons.error)
+                        // ),
+                        Image.network(
                           product.image,
-                        height: 150,
-                      )
-                    ],
+                          fit: BoxFit.fill,
+                        )
+                      ],
+                    ),
                   ),
-                ),
-                // SizedBox(height: 5),
-                TitleText(
-                  text: product.name,
-                  fontSize: product.isSelected ? 16 : 14,
-                ),
-                TitleText(
-                  text: product.brand,
-                  fontSize: product.isSelected ? 14 : 12,
-                  color: LightColor.orange,
-                ),
-                TitleText(
-                  text: product.price.toString(),
-                  fontSize: product.isSelected ? 18 : 16,
-                ),
-              ],
-            ),
-          ],
-        ),
-      ).ripple(() {
-        Navigator.of(context).pushNamed('/detail');
-        onSelected!(product);
-      }, borderRadius: BorderRadius.all(Radius.circular(20))),
+                  // SizedBox(height: 5),
+                  TitleText(
+                    text: product.name,
+                    fontSize: product.isSelected ? 16 : 14,
+                  ),
+                  TitleText(
+                    text: product.brand,
+                    fontSize: product.isSelected ? 14 : 12,
+                    color: LightColor.orange,
+                  ),
+                  TitleText(
+                    text: product.price.toString(),
+                    fontSize: product.isSelected ? 18 : 16,
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ).ripple(() {
+          Navigator.of(context).pushNamed('/detail');
+          onSelected!(product);
+        }, borderRadius: BorderRadius.all(Radius.circular(20))),
+      ),
     );
   }
 }

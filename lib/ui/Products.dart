@@ -23,14 +23,34 @@ class _ProductsPageState extends State<Product> {
     image: "https://rukminim1.flixcart.com/image/416/416/kmmcrrk0/mobile/5/w/u/8-pro-rmx3081-realme-original-imagfgpgcxyjufz3.jpeg?q=70",
     isSelected: true,
     name: "Real me 8 Pro",
-    price: 18000
+    price: 18000,
+    description: "This is a great product! Just buy it"
   );
 
+  List<Mobile> _mobilesList = [];
+
+  List<Widget> _getMobilesList() {
+    List<Widget> _productCardList = [];
+    _productCardList.add(ProductCard(product: product));
+    _productCardList.add(ProductCard(product: product));
+    _productCardList.add(ProductCard(product: product));
+    _productCardList.add(ProductCard(product: product));
+    _productCardList.add(ProductCard(product: product));
+    _productCardList.add(ProductCard(product: product));
+    _productCardList.add(ProductCard(product: product));
+    _productCardList.add(ProductCard(product: product));
+    _productCardList.add(ProductCard(product: product));
+    return _productCardList;
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(widget.title),
-      body: ProductCard(product: product),
+      // body: ProductCard(product: product),
+      body: GridView.count(
+        crossAxisCount: 2,
+        children: _getMobilesList(),
+      ),
     );
   }
 }
