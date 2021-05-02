@@ -1,6 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="kmobile.app.mobile_store">
-   <application
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
         android:label="Mobile Store"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -3,6 +3,7 @@ import 'package:mobile_store/ui/Cart.dart';
 import 'package:mobile_store/ui/Login.dart';
 import 'package:mobile_store/ui/MainMenu.dart';
 import 'package:mobile_store/ui/Orders.dart';
+import 'package:mobile_store/ui/ProductDetail.dart';
 import 'package:mobile_store/ui/Products.dart';
 import 'package:mobile_store/ui/Profile.dart';
 // import 'package:mobile_store/ui/MainMenu.dart';
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         '/cart': (BuildContext context) => Cart(title: 'Shopping Cart'),
         '/orders': (BuildContext context) => Orders(title: 'Your orders'),
         '/profile': (BuildContext context) => Profile(title: 'Profile'),
+        '/detail': (BuildContext context) => ProductDetail(title: 'Mobile'),
       },
     );
   }

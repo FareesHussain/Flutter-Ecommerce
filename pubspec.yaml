@@ -31,6 +31,7 @@ dependencies:
   flutter_launcher_icons: "^0.8.0"
   persistent_bottom_nav_bar: any
   passwordfield: ^0.0.82
+  google_fonts: ^0.3.9
 
 flutter_icons:
   image_path: "assets/kmobile.png"
