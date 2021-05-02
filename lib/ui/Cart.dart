@@ -6,19 +6,19 @@ import 'package:flutter/material.dart';
 import 'package:mobile_store/widgets/AppBar.dart';
 
 class Cart extends StatefulWidget {
-  Cart({Key key, this.title}) : super(key: key);
+  Cart({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
-  State createState() => _cartPageState();
+  State createState() => _CartPageState();
 }
 
-class _cartPageState extends State<Cart> {
+class _CartPageState extends State<Cart> {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(widget.title),
+      appBar: customAppBar(widget.title),
       body: Center(
         child: Text('Hello World'),
       ),

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:passwordfield/passwordfield.dart';
+import 'package:mobile_store/widgets/AppBar.dart';
+import 'package:mobile_store/widgets/InputWidgets.dart';
 
 class Login extends StatefulWidget {
-  Login({Key key, this.title}) : super(key: key);
+  Login({Key? key, this.title}) : super(key: key);
 
-  final String title;
+  final String? title;
   @override
   State createState() => _LoginPageState();
 }
@@ -22,6 +23,7 @@ class _LoginPageState extends State<Login> {
   void loginOrRegister() {
     if(toggle) {
       // login
+
     } else {
       // register
     }
@@ -35,38 +37,25 @@ class _LoginPageState extends State<Login> {
     }
     else return registerColumn();
     }
+  _getTitle() {
+    if(toggle) {
+      return "Login";
+    } else {
+      return "Register";
+    }
+  }
   loginColumn() {
-    Column(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: TextFormField(
-            textInputAction: TextInputAction.next,
-            textCapitalization: TextCapitalization.words,
-            decoration: InputDecoration(
-                filled: true,
-                icon: const Icon(Icons.mail),
-                hintText: 'Enter your Email address',
-                border: OutlineInputBorder(),
-                labelText: 'Enter Email'
-            ),
-          ),
+        CustomTextField(
+          iconData: Icons.mail,
+          hintText: "Enter your Email address",
+          labelText: "Enter Email ID",
         ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: TextFormField(
-            textInputAction: TextInputAction.done,
-            textCapitalization: TextCapitalization.words,
-            obscureText: true,
-            decoration: InputDecoration(
-                filled: true,
-                icon: const Icon(Icons.keyboard_rounded),
-                hintText: 'Enter your password containing only alphabets',
-                border: OutlineInputBorder(),
-                labelText: 'Enter password'
-            ),
-          ),
+        CustomPasswordField(
+            hintText: "Enter your password containing only alphabets",
+            labelText: "Enter password"
         ),
         TextButton(
           child: new Text(
@@ -82,7 +71,7 @@ class _LoginPageState extends State<Login> {
     );
   }
   registerColumn() {
-    Column(
+    return Column(
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -126,16 +115,6 @@ class _LoginPageState extends State<Login> {
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: PasswordField(
-            hasFloatingPlaceholder: true,
-            pattern: r'.*[@$#.*].*',
-            border: OutlineInputBorder(
-                borderSide: BorderSide(width: 2)),
-            errorMessage: 'must contain special character either . * @ # \$',
-          ),
-        ),
         TextButton(
           child: new Text(
             'Already Registered? Login.',
@@ -152,15 +131,13 @@ class _LoginPageState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title)
-      ),
+      appBar: customAppBar(_getTitle()),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-           crossAxisAlignment: CrossAxisAlignment.center,
-           children: [
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
              _getLoginOrRegister(),
               ElevatedButton(onPressed: loginOrRegister, child: Text('Submit'))
            ],

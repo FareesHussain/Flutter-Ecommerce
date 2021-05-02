@@ -8,16 +8,16 @@ import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'Orders.dart';
 
 class MainMenu extends StatefulWidget {
-  MainMenu({Key key, this.title}) : super(key: key);
+  MainMenu({Key? key, required this.title}) : super(key: key);
 
   final String title;
   @override
-  State createState() => _mainMenuPageState();
+  State createState() => _MainMenuPageState();
 }
 
-class _mainMenuPageState extends State<MainMenu> {
+class _MainMenuPageState extends State<MainMenu> {
 
-  PersistentTabController _controller;
+  PersistentTabController? _controller;
 
   List<Widget> _buildScreens() {
     return [
@@ -30,10 +30,10 @@ class _mainMenuPageState extends State<MainMenu> {
 
   List<PersistentBottomNavBarItem> _navBarItems() {
     return [
-      CustomNavBarItem("Mobiles", Icons.store_mall_directory_outlined),
-      CustomNavBarItem("Cart", Icons.shopping_cart_outlined),
-      CustomNavBarItem("Orders", Icons.history_outlined),
-      CustomNavBarItem("Profile", Icons.person_outlined),
+      customNavBarItem("Mobiles", Icons.store_mall_directory_outlined),
+      customNavBarItem("Cart", Icons.shopping_cart_outlined),
+      customNavBarItem("Orders", Icons.history_outlined),
+      customNavBarItem("Profile", Icons.person_outlined),
     ];
   }
 

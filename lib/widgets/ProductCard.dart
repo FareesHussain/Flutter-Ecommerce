@@ -6,8 +6,8 @@ import 'package:mobile_store/widgets/extensions.dart';
 
 class ProductCard extends StatelessWidget {
   final Mobile product;
-  final ValueChanged<Mobile> onSelected;
-  ProductCard({Key key, this.product, this.onSelected}) : super(key: key);
+  final ValueChanged<Mobile>? onSelected;
+  ProductCard({Key? key, required this.product, this.onSelected}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -64,7 +64,7 @@ class ProductCard extends StatelessWidget {
         ),
       ).ripple(() {
         Navigator.of(context).pushNamed('/detail');
-        onSelected(product);
+        onSelected!(product);
       }, borderRadius: BorderRadius.all(Radius.circular(20))),
     );
   }

@@ -6,7 +6,7 @@
 
     <application
         android:label="Mobile Store"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@drawable/kmobile">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

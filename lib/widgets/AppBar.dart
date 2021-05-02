@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-AppBar CustomAppBar(String title) {
+AppBar customAppBar(String title) {
   return AppBar(
     title: Text(
       title.toUpperCase(),

@@ -3,21 +3,19 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:mobile_store/constants/colors.dart';
 import 'package:mobile_store/models/Mobile.dart';
 import 'package:mobile_store/widgets/AppBar.dart';
 import 'package:mobile_store/widgets/ProductCard.dart';
-import 'package:mobile_store/widgets/title_text.dart';
 
 class Product extends StatefulWidget {
-  Product({Key key, this.title}) : super(key: key);
+  Product({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
-  State createState() => _productsPageState();
+  State createState() => _ProductsPageState();
 }
 
-class _productsPageState extends State<Product> {
+class _ProductsPageState extends State<Product> {
 
   Mobile product = Mobile(
     brand: "realme",
@@ -31,7 +29,7 @@ class _productsPageState extends State<Product> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(widget.title),
+      appBar: customAppBar(widget.title),
       body: ProductCard(product: product),
     );
   }

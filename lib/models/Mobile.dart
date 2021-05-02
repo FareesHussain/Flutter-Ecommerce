@@ -5,5 +5,12 @@ class Mobile{
   String image ;
   double price ;
   bool isSelected ;
-  Mobile({this.id,this.name, this.brand, this.price, this.isSelected = false,this.image});
+  Mobile(
+      {
+        required this.id,
+        required this.name,
+        required this.brand,
+        required this.price,
+        this.isSelected = false,
+        required this.image});
 }
