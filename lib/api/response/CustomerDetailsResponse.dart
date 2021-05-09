@@ -12,12 +12,12 @@ class CustomerDetailsResponse {
   CustomerDetailsResponse({
     required this.successful,
     required this.message,
-    required this.data,
+    this.data,
   });
 
   bool successful;
   String message;
-  Data data;
+  Data? data;
 
   factory CustomerDetailsResponse.fromJson(Map<String, dynamic> json) => CustomerDetailsResponse(
     successful: json["successful"],
@@ -28,7 +28,7 @@ class CustomerDetailsResponse {
   Map<String, dynamic> toJson() => {
     "successful": successful,
     "message": message,
-    "data": data.toJson(),
+    "data": data!.toJson(),
   };
 }
 

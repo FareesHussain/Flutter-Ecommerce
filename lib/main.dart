@@ -31,7 +31,6 @@ class MyApp extends StatelessWidget {
         '/products': (BuildContext context) => Product(title: 'Mobiles'),
         '/cart': (BuildContext context) => Cart(title: 'Shopping Cart'),
         '/orders': (BuildContext context) => Orders(title: 'Your orders'),
-        '/profile': (BuildContext context) => Profile(title: 'Profile'),
         '/detail': (BuildContext context) => ProductDetail(title: 'Mobile'),
       },
     );

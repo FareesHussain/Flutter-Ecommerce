@@ -24,7 +24,7 @@ class _MainMenuPageState extends State<MainMenu> {
       Product(title: "Mobiles"),
       Cart(title: "Shopping Cart"),
       Orders(title: "Orders"),
-      Profile(title: "Shopping Cart"),
+      Profile(title: "Shopping Cart", homeContext: context,),
     ];
   }
 
