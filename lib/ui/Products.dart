@@ -26,18 +26,27 @@ class _ProductsPageState extends State<Product> {
     price: 18000,
     description: "This is a great product! Just buy it"
   );
+  Mobile product1 = Mobile(
+      brand: "Apple",
+      id: 2,
+      image: "https://rukminim1.flixcart.com/image/416/416/kgiaykw0/mobile/g/k/e/apple-iphone-11-mhdf3hn-a-original-imafwqepatn3yzct.jpeg?q=70",
+      isSelected: true,
+      name: "Iphone max pro",
+      price: 1000000,
+      description: "This is a great product! Just buy it"
+  );
 
   List<Mobile> _mobilesList = [];
 
   List<Widget> _getMobilesList() {
     List<Widget> _productCardList = [];
+    _productCardList.add(ProductCard(product: product1));
+    _productCardList.add(ProductCard(product: product));
+    _productCardList.add(ProductCard(product: product1));
+    _productCardList.add(ProductCard(product: product1));
     _productCardList.add(ProductCard(product: product));
     _productCardList.add(ProductCard(product: product));
-    _productCardList.add(ProductCard(product: product));
-    _productCardList.add(ProductCard(product: product));
-    _productCardList.add(ProductCard(product: product));
-    _productCardList.add(ProductCard(product: product));
-    _productCardList.add(ProductCard(product: product));
+    _productCardList.add(ProductCard(product: product1));
     _productCardList.add(ProductCard(product: product));
     _productCardList.add(ProductCard(product: product));
     return _productCardList;
