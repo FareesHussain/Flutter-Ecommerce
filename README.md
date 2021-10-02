@@ -1,4 +1,4 @@
-# mobile_store
+# Mobile Store
 
 Mobile Store app using Ktor backend and MySql database
 
